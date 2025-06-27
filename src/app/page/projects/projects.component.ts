@@ -26,7 +26,7 @@ export class ProjectsComponent {
     {
       img: "../../../assets/projects/lais-pwa.png",
       title: "Aplicativo gerenciador",
-      subtitle: "Um aplicativo para gerenciar seus atendimentos e seus serviços, conectado diretamente com o seu portifólio.",
+      subtitle: "Um aplicativo para gerenciar atendimentos e serviços, conectado diretamente com o portifólio da cliente.",
     },
   ]
 

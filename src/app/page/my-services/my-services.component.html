@@ -1,0 +1,15 @@
+<section id="my-services">
+  <div class="principal-text">
+    <span class="first">Meus trabalhos</span>
+    <span class="second">Veja meus projetos em destaque</span>
+  </div>
+  <div class="services">
+    <div class="item" *ngFor="for let s of services">
+      <img src="{{ s.img }}" alt="{{ s.title }}">
+      <div class="text">
+        <h1>{{ s.title }}</h1>
+        <p>{{ s.subtitle }}</p>
+      </div>
+    </div>
+  </div>
+</section>

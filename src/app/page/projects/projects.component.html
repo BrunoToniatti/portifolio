@@ -1,0 +1,15 @@
+<section id="projects">
+  <div class="principal-text">
+    <span class="first">Meus trabalhos</span>
+    <span class="second">Veja meus projetos em destaque</span>
+  </div>
+  <div class="view-projects">
+    <div class="item-project" *ngFor="for let p of projects">
+      <img src="{{ p.img }}" alt="{{ p.title }}">
+      <div class="text">
+        <span class="title">{{ p.title }}</span>
+        <span class="subtitle">{{ p.subtitle }}</span>
+      </div>
+    </div>
+  </div>
+</section>

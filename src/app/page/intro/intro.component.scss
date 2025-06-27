@@ -76,10 +76,42 @@
         color: $secondary-text-color;
       }
     }
+
   }
+  .scroll-down {
+      margin-top: 20px;
+      text-decoration: none;
+      color: $blue-primary;
+      font-weight: bold;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 16px;
+      transition: transform 0.2s ease;
+
+      .arrow {
+        font-size: 50px;
+        animation: bounce 1.5s infinite;
+      }
+
+      &:hover {
+        transform: translateY(3px);
+      }
+    }
+
+    @keyframes bounce {
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(5px);
+      }
+    }
 }
 
-/* Responsivo pra telas menores */
 @media (max-width: 768px) {
   .intro {
     gap: 30px;
@@ -138,7 +170,7 @@
       height: 100px;
     }
 
-    .skills{
+    .skills {
       flex-wrap: wrap;
     }
   }

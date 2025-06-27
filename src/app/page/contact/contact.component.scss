@@ -1,0 +1,80 @@
+@import '../../../styles/variables';
+
+#contact {
+  height: 80vh;
+  background-image: url('../../../assets/img/contato.png');
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+  align-items: center;
+  padding-top: 80px;
+
+  .principal-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    .first {
+      color: $purple-color;
+    }
+
+    .second {
+      color: $secondary-text-color;
+      font-size: 25px;
+      font-weight: 700;
+    }
+
+    .third {
+      color: $secondary-text-color;
+      font-size: 12px;
+    }
+  }
+
+  .contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    .item {
+      border-radius: 10px;
+      width: 350px;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0px 20px;
+      background-color: $secondary-color;
+      transition: all 0.2s ease;
+      cursor: pointer;
+
+      .icon {
+        width: 24px;
+        height: 24px;
+        fill: $secondary-text-color;
+        transition: all 0.2s ease;
+      }
+
+      .contact-type {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        color: $secondary-text-color;
+        transition: all 0.2s ease;
+      }
+
+      &:hover {
+        border: 1px solid $blue-primary;
+
+        .icon{
+          fill: $blue-primary
+        }
+
+        .contact-type{
+          color: $blue-primary;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+@import '../../../styles/variables';
+
+.intro {
+  background-image: url(../../../assets/img/intro.png);
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+
+  .photo-perfil {
+    border: 3px solid $blue-primary;
+    width: 150px;
+    height: 150px;
+    background-image: url('../../../assets/img/perfil.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 700px;
+
+    .subtext {
+      color: $secondary-text-color;
+      font-weight: 300;
+
+      span {
+        color: $blue-primary;
+      }
+    }
+
+    .title {
+      color: $secondary-text-color;
+      font-size: 50px;
+      font-weight: 800;
+    }
+
+    .resume {
+      color: $secondary-text-color;
+      font-weight: 100;
+    }
+  }
+
+  .skills {
+    display: flex;
+    gap: 10px;
+    .item {
+      background-color: $secondary-color;
+      display: flex;
+      align-items: center;
+      padding: 5px 11px;
+      border-radius: 20px;
+      gap: 5px;
+      img {
+        height: 40px;
+
+      }
+      p{
+        color: $secondary-text-color;
+      }
+    }
+  }
+}

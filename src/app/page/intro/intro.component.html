@@ -1,0 +1,22 @@
+<div class="intro">
+  <div class="photo-perfil">
+  </div>
+  <div class="text">
+    <div class="subtext">
+      Hello World! Meu nome é <span>Bruno Toniatti</span> e sou
+    </div>
+    <div class="title">
+      Desenvolvedor Full-Stack
+    </div>
+    <div class="resume">
+      Transformo necessidades em aplicações reais, evolventes e funcionais. Desenvolvo sistemas através da minha paixão
+      pela tecnologia, contribuindo com soluções inovadoras e eficazes para desafios complexos.
+    </div>
+  </div>
+  <div class="skills">
+    <div class="item" *ngFor="let s of skills">
+      <img src="{{ s.img }}" alt="{{ s.title }}">
+      <p>{{ s.title }}</p>
+    </div>
+  </div>
+</div>

@@ -1,61 +1,190 @@
 @import '../../../styles/variables';
 
 #my-services {
-  height: 75vh;
-  background-color: $bg-secondary-color;
+  min-height: 85vh;
+  background: linear-gradient(180deg, $bg-secondary-color 0%, #111318 50%, $principal-color 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
+  padding: 0 20px;
+  position: relative;
+  margin: 0;
+  width: 100%;
+  padding-bottom: 0;
+
+  // Efeito de fundo
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.08) 0%, transparent 50%);
+  }
 
   .principal-text {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 5px;
+    gap: 10px;
+    z-index: 1;
+    margin-bottom: 30px;
+    margin-top: 80px;
 
     .first {
-      color: $blue-primary;
+      background: $gradient-cool;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-size: 18px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
     }
 
     .second {
       color: $secondary-text-color;
-      font-size: 25px;
+      font-size: 32px;
       font-weight: 700;
+      text-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
     }
   }
 
   .services {
     display: flex;
-    gap: 20px;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    z-index: 1;
+    margin-bottom: 80px;
+    padding-bottom: 0;
+    
     .item {
-      padding: 20px 10px 10px 10px;
-      border-radius: 10px;
-      border: 3px solid $secondary-color;
-      width: 280px;
-      height: 155px;
+      padding: 30px 20px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, rgba(26, 29, 41, 0.6) 0%, rgba(13, 14, 17, 0.6) 100%);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(139, 92, 246, 0.2);
+      width: 300px;
+      min-height: 220px;
       display: flex;
       flex-direction: column;
-      gap: 30px;
+      gap: 25px;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
 
-      img {
-        width: 50px;
-        height: 40px;
+      &::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(45deg, transparent, rgba(139, 92, 246, 0.1), transparent);
+        transform: rotate(45deg);
+        transition: all 0.6s ease;
+      }
+
+      &:hover::before {
+        left: 100%;
+      }
+
+      &:hover {
+        transform: translateY(-10px) scale(1.02);
+        border-color: rgba(139, 92, 246, 0.5);
+        box-shadow: 0 15px 50px rgba(139, 92, 246, 0.3),
+                    0 0 30px rgba(6, 182, 212, 0.2);
+
+        .icon-wrapper {
+          transform: rotateY(360deg);
+          background: $gradient-cool;
+        }
+      }
+
+      .icon-wrapper {
+        width: 70px;
+        height: 70px;
+        border-radius: 15px;
+        background: linear-gradient(135deg, rgba(139, 92, 246, 0.2) 0%, rgba(6, 182, 212, 0.2) 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.6s ease;
+        border: 1px solid rgba(139, 92, 246, 0.3);
+
+        img {
+          width: 40px;
+          height: 40px;
+          filter: drop-shadow(0 0 8px rgba(139, 92, 246, 0.6));
+        }
       }
 
       .text {
         display: flex;
         flex-direction: column;
-        gap: 5px;
+        gap: 12px;
+        
         h1 {
           color: $secondary-text-color;
+          font-size: 22px;
+          font-weight: 600;
+          background: $gradient-cool;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
         }
 
         p {
           color: $secondary-text-color;
-          font-weight: 100;
+          font-weight: 300;
           font-size: 15px;
+          line-height: 1.6;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  #my-services {
+    padding: 0 15px;
+
+    .principal-text {
+      .first {
+        font-size: 16px;
+      }
+
+      .second {
+        font-size: 26px;
+      }
+    }
+
+    .services {
+      .item {
+        width: 100%;
+        max-width: 320px;
+      }
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  #my-services {
+    .services {
+      .item {
+        padding: 25px 15px;
+        
+        .text {
+          h1 {
+            font-size: 20px;
+          }
+
+          p {
+            font-size: 14px;
+          }
         }
       }
     }

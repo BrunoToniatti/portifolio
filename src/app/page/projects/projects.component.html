@@ -4,8 +4,13 @@
     <span class="second">Veja meus projetos em destaque</span>
   </div>
   <div class="view-projects">
-    <div class="item-project" *ngFor="for let p of projects">
-      <img src="{{ p.img }}" alt="{{ p.title }}">
+    <div class="item-project" *ngFor="let p of projects">
+      <div class="project-image-wrapper">
+        <img src="{{ p.img }}" alt="{{ p.title }}">
+        <div class="overlay">
+          <span class="view-icon">👁️</span>
+        </div>
+      </div>
       <div class="text">
         <span class="title">{{ p.title }}</span>
         <span class="subtitle">{{ p.subtitle }}</span>

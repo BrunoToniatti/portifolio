@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-projects',
@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss'
 })
-export class ProjectsComponent {
+export class ProjectsComponent implements OnInit {
 
   projects = [
     {
@@ -29,5 +29,28 @@ export class ProjectsComponent {
       subtitle: "Um aplicativo para gerenciar atendimentos e serviços, conectado diretamente com o portifólio da cliente.",
     },
   ]
+
+  ngOnInit() {
+    this.observeElements();
+  }
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.observeElements();
+  }
+
+  private observeElements() {
+    const elements = document.querySelectorAll('.item-project');
+    elements.forEach((element, index) => {
+      const rect = element.getBoundingClientRect();
+      const isVisible = rect.top < window.innerHeight * 0.85;
+      
+      if (isVisible && !element.classList.contains('animated')) {
+        setTimeout(() => {
+          element.classList.add('animate-on-scroll', 'animated');
+        }, index * 150);
+      }
+    });
+  }
 
 }

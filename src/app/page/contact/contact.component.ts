@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 
 
 @Component({
@@ -11,7 +11,30 @@ import { Component } from '@angular/core';
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
-export class ContactComponent {
+export class ContactComponent implements OnInit {
+
+  ngOnInit() {
+    this.observeElements();
+  }
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.observeElements();
+  }
+
+  private observeElements() {
+    const elements = document.querySelectorAll('#contact .item');
+    elements.forEach((element, index) => {
+      const rect = element.getBoundingClientRect();
+      const isVisible = rect.top < window.innerHeight * 0.85;
+      
+      if (isVisible && !element.classList.contains('animated')) {
+        setTimeout(() => {
+          element.classList.add('animate-on-scroll', 'animated');
+        }, index * 150);
+      }
+    });
+  }
 
   goTo(where: string){
     if(where == 'github'){

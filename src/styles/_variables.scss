@@ -1,6 +1,17 @@
-$principal-color: #16181D;
+$principal-color: #0A0E27;
 $purple-color: #BB72E9;
+$purple-light: #D896FF;
 $bg-secondary-color: #0D0E11;
-$secondary-color: #292C34;
-$blue-primary: #3996DB;
-$secondary-text-color: #C0C4CE;
+$secondary-color: #1A1D29;
+$blue-primary: #3B82F6;
+$blue-light: #60A5FA;
+$cyan-accent: #06B6D4;
+$pink-accent: #EC4899;
+$orange-accent: #F97316;
+$secondary-text-color: #E5E7EB;
+
+// Gradientes
+$gradient-primary: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 50%, #EC4899 100%);
+$gradient-secondary: linear-gradient(135deg, #06B6D4 0%, #3B82F6 100%);
+$gradient-warm: linear-gradient(135deg, #F97316 0%, #EC4899 100%);
+$gradient-cool: linear-gradient(135deg, #8B5CF6 0%, #06B6D4 100%);

@@ -1,1 +1,19 @@
 @import '../../styles/variables';
+
+:host {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: $principal-color;
+}
+
+app-intro,
+app-projects,
+app-my-services,
+app-contact {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
